@@ -1,0 +1,49 @@
+llm_settings:
+  # Primary LLM provider (ollama, openai, github)
+  provider: "ollama"
+  
+  # Ollama configuration
+  ollama:
+    base_url: "http://localhost:11434"
+    model: "codellama:13b"
+    timeout: 300
+    
+  # OpenAI configuration (alternative)
+  openai:
+    api_key: "your-openai-api-key"
+    model: "gpt-4"
+    max_tokens: 4096
+    temperature: 0.1
+    
+  # GitHub Models configuration (alternative)
+  github:
+    api_key: "your-github-token"
+    model: "gpt-4"
+    base_url: "https://models.inference.ai.azure.com"
+    
+  # Request settings
+  request_settings:
+    max_retries: 3
+    retry_delay: 2
+    temperature: 0.1
+    max_tokens: 4096
+
+generation_settings:
+  # Test generation parameters
+  max_tests_per_function: 5
+  include_edge_cases: true
+  include_error_handling: true
+  generate_mocks: false
+  
+  # Coverage targets
+  target_line_coverage: 80
+  target_branch_coverage: 70
+  
+  # Build settings
+  build_timeout: 120
+  test_timeout: 60
+  
+  # Output settings
+  output_format: "gtest"
+  preserve_comments: true
+  auto_format: true 

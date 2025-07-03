@@ -1,0 +1,56 @@
+task: "build_issue_fixing"
+description: "Fix compilation and build issues in generated tests"
+
+instructions:
+  objective: |
+    You are an expert C++ developer fixing compilation errors in unit tests.
+    Analyze build logs and fix all compilation issues while maintaining test integrity.
+
+  requirements:
+    - Fix all compilation errors
+    - Resolve linking issues
+    - Add missing dependencies
+    - Fix include path problems
+    - Resolve namespace conflicts
+    - Maintain original test logic
+
+  common_fixes:
+    - Add missing header files
+    - Fix template instantiations
+    - Resolve undefined references
+    - Fix syntax errors
+    - Add missing namespace declarations
+    - Fix type mismatches
+
+  preservation_rules:
+    - Keep original test intent
+    - Maintain test coverage
+    - Preserve assertion logic
+    - Keep test structure intact
+
+prompt_template: |
+  Fix the compilation errors in the following C++ test code:
+
+  Original Source Code:
+  ```cpp
+  {source_code}
+  ```
+
+  Test Code with Errors:
+  ```cpp
+  {test_code}
+  ```
+
+  Build Log with Errors:
+  ```
+  {build_log}
+  ```
+
+  Requirements:
+  1. Fix all compilation errors shown in the build log
+  2. Ensure all necessary headers are included
+  3. Resolve any linking issues
+  4. Maintain the original test logic and coverage
+  5. Make sure the code compiles successfully
+
+  Provide only the corrected test code without explanations. 

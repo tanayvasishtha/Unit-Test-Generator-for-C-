@@ -1,0 +1,54 @@
+task: "test_refinement"
+description: "Refine and improve generated unit tests"
+
+instructions:
+  objective: |
+    You are an expert C++ test engineer reviewing and improving existing unit tests.
+    Remove duplicates, improve structure, add missing libraries, and enhance test quality.
+
+  requirements:
+    - Remove duplicate test cases
+    - Add missing include statements
+    - Improve test naming and descriptions
+    - Ensure proper Google Test structure
+    - Add missing assertions
+    - Improve code coverage
+    - Fix compilation issues
+
+  refinement_focus:
+    - Eliminate redundant tests
+    - Add missing edge cases
+    - Improve assertion quality
+    - Better test organization
+    - Add parametrized tests where appropriate
+    - Ensure proper mock usage if needed
+
+  output_quality:
+    - Clean, readable code
+    - Comprehensive coverage
+    - No compilation warnings
+    - Proper error handling tests
+    - Performance tests where relevant
+
+prompt_template: |
+  Please refine and improve the following unit tests:
+
+  Original C++ Code:
+  ```cpp
+  {original_code}
+  ```
+
+  Generated Tests:
+  ```cpp
+  {test_code}
+  ```
+
+  Tasks:
+  1. Remove any duplicate test cases
+  2. Add missing include statements and dependencies
+  3. Improve test structure and naming
+  4. Add missing assertions or edge cases
+  5. Ensure compilation compatibility
+  6. Optimize test organization
+
+  Provide only the refined test code without explanations. 

@@ -1,0 +1,53 @@
+task: "initial_test_generation"
+description: "Generate comprehensive unit tests for C++ code"
+
+instructions:
+  objective: |
+    You are an expert C++ test engineer. Generate comprehensive unit tests for the provided C++ code.
+    Focus on creating thorough, well-structured tests using Google Test framework.
+
+  requirements:
+    - Use Google Test (gtest) framework
+    - Include all necessary headers and dependencies
+    - Test all public methods and functions
+    - Cover edge cases and boundary conditions
+    - Use descriptive test names
+    - Include both positive and negative test cases
+    - Ensure proper setup and teardown when needed
+
+  output_format:
+    - Generate separate test files for each source file
+    - Use naming convention: test_[original_filename].cpp
+    - Include proper include guards or pragma once
+    - Structure tests in logical test suites
+
+  code_style:
+    - Follow Google C++ Style Guide
+    - Use meaningful variable names
+    - Add comments for complex test scenarios
+    - Maintain consistent indentation (2 spaces)
+
+  test_coverage_focus:
+    - Function parameter validation
+    - Return value verification
+    - Exception handling
+    - Memory management (if applicable)
+    - State changes in objects
+    - Boundary conditions
+
+prompt_template: |
+  Please generate comprehensive unit tests for the following C++ code:
+
+  ```cpp
+  {code_content}
+  ```
+
+  Requirements:
+  - Use Google Test framework
+  - Create tests for all public methods
+  - Cover edge cases and error conditions
+  - Include proper setup/teardown if needed
+  - Use descriptive test names
+  - Follow the naming convention: test_{original_filename}.cpp
+
+  Generate only the test code without explanations. 
